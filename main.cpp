@@ -19,13 +19,16 @@ int main() {
 
     // declare empty array
     int randoms[10] {};
-
+    int evens = 0;
     cout << "Regular order: ";
     // put 10 random numbers in array
     for (int i = 0; i < sizeof(randoms) / sizeof(int); i++) {
         randoms[i] = rand() % 10 + 1;
-        // also take advantage to print the array, less for loops
+        // also take advantage to print the array and calculate evens, less for loops
         cout << randoms[i] << " ";
+        if (randoms[i] % 2 == 0) {
+            evens++;
+        }
     }
 
     // goes through array from index 9-0, printing it in reverse
@@ -33,7 +36,9 @@ int main() {
     for (int i = sizeof(randoms) / sizeof(int) - 1; i >= 0; i--) {
         cout << randoms[i] << " ";
     }
-
+    //prints evens
+    cout << "There are " << evens << " even numbers in the array. " << endl;
+    
     // problem 2
 
     int day = 1; // uses 1 to not cause an index error if they skip the input
